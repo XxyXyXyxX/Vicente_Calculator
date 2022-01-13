@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Answer = (TextView)findViewById(R.id.Answer);
         First_Variable = (EditText)findViewById(R.id.First_Variable);
         Second_Variable = (EditText)findViewById(R.id.Second_Variable);
-        float Num1 = Float.parseFloat(First_Variable.getText().toString());
-        float Num2 = Float.parseFloat(Second_Variable.getText().toString());
-        float result = 0;
+        double Num1 = Float.parseFloat(First_Variable.getText().toString());
+        double Num2 = Float.parseFloat(Second_Variable.getText().toString());
+        double result = 0;
         switch (v.getId())
         {
             case R.id.Add:
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Remainder:
                 result = Num1 % Num2;
         }
-        Answer.setText(Float.toString(result));
+        Answer.setText(Double.toString(result));
 
     }
 }
