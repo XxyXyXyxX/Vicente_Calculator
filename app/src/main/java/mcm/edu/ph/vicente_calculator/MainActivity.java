@@ -19,31 +19,49 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void Calculator(View v){
-        Answer = (TextView)findViewById(R.id.Answer);
-        First_Variable = (EditText)findViewById(R.id.First_Variable);
-        Second_Variable = (EditText)findViewById(R.id.Second_Variable);
+    public void Calculator(View v) {
+        Answer = (TextView) findViewById(R.id.Answer);
+        First_Variable = (EditText) findViewById(R.id.First_Variable);
+        Second_Variable = (EditText) findViewById(R.id.Second_Variable);
         double Num1 = Float.parseFloat(First_Variable.getText().toString());
         double Num2 = Float.parseFloat(Second_Variable.getText().toString());
         double result = 0;
-        switch (v.getId())
-        {
+        switch (v.getId()){
             case R.id.Add:
-                result = Num1 + Num2;
+                Add(result,Num1,Num2);
                 break;
             case R.id.Subtract:
-                result = Num1 - Num2;
+                Subtract(result,Num1,Num2);
                 break;
             case R.id.Multiply:
-                result = Num1 * Num2;
+                Multiply(result,Num1,Num2);
                 break;
             case R.id.Divide:
-                result = Num1 / Num2;
+                Divide(result,Num1,Num2);
                 break;
             case R.id.Remainder:
-                result = Num1 % Num2;
+                Remainder(result,Num1,Num2);
+                break;
         }
-        Answer.setText(Double.toString(result));
-
+    }
+    public void Add(double a, double b, double c){
+        a = b + c;
+        Answer.setText(Double.toString(a));
+    }
+    public void Subtract(double a, double b, double c){
+        a = b - c;
+        Answer.setText(Double.toString(a));
+    }
+    public void Multiply(double a, double b, double c){
+        a = b * c;
+        Answer.setText(Double.toString(a));
+    }
+    public void Divide(double a, double b, double c){
+        a = b / c;
+        Answer.setText(Double.toString(a));
+    }
+    public void Remainder(double a, double b, double c){
+        a = b % c;
+        Answer.setText(Double.toString(a));
     }
 }
